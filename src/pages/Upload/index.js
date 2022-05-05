@@ -1,6 +1,5 @@
-import React from "react";
-import Header from "~/components/Layout/DefaultLayout/Header";
+import React from 'react';
 
 export default function Upload() {
-  return <div className="content">Upload page</div>;
+  return <div className='content'>Upload page</div>;
 }

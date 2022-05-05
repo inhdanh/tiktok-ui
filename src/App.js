@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { publicRoutes } from "~/routes";
-import { DefaultLayout } from "~/components/Layout";
-import { Fragment } from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { publicRoutes } from '~/routes';
+import { DefaultLayout } from '~/components/Layout';
+import { Fragment } from 'react';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
         <Routes>
           {publicRoutes.map((route, index) => {
             let Layout = DefaultLayout;

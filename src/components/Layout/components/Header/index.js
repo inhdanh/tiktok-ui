@@ -27,6 +27,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -110,13 +112,20 @@ export default function Header() {
           {currentUser ? (
             <>
               <Tippy delay={[0, 200]} content='Upload video' placement='bottom'>
-                <button>
-                  <FontAwesomeIcon className={cx('action-btn')} icon={faCloudUpload} />
+                <button className={cx('action-btn')}>
+                  <UploadIcon />
                 </button>
               </Tippy>
-              <button>
-                <FontAwesomeIcon className={cx('action-btn')} icon={faMessage} />
-              </button>
+              <Tippy delay={[0, 200]} content='Message' placement='bottom'>
+                <button className={cx('action-btn')}>
+                  <MessageIcon width='2.6rem' height='2.6rem' />
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 200]} content='Inbox' placement='bottom'>
+                <button className={cx('action-btn')}>
+                  <InboxIcon />
+                </button>
+              </Tippy>
             </>
           ) : (
             <>
@@ -126,10 +135,10 @@ export default function Header() {
           )}
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx('user-avatar')}
                 alt='Nguyen van a'
-                src='https://images.unsplash.com/photo-1600016896018-8f9edd441640?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'
+                src='https://image.unsplash.com/photo-1600016896018-8f9edd441640?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'
               />
             ) : (
               <button className={cx('more-btn')}>

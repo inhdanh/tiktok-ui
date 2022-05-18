@@ -27,7 +27,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
@@ -103,7 +103,7 @@ export default function Header() {
             <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
             <button className={cx('search-btn')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon />
             </button>
           </div>
         </HeadlessTippy>
@@ -111,19 +111,20 @@ export default function Header() {
         <div className={cx('actions')}>
           {currentUser ? (
             <>
-              <Tippy delay={[0, 200]} content='Upload video' placement='bottom'>
+              <Tippy delay={[0, 50]} content='Upload video' placement='bottom'>
                 <button className={cx('action-btn')}>
                   <UploadIcon />
                 </button>
               </Tippy>
-              <Tippy delay={[0, 200]} content='Message' placement='bottom'>
+              <Tippy delay={[0, 50]} content='Message' placement='bottom'>
                 <button className={cx('action-btn')}>
                   <MessageIcon width='2.6rem' height='2.6rem' />
                 </button>
               </Tippy>
-              <Tippy delay={[0, 200]} content='Inbox' placement='bottom'>
+              <Tippy delay={[0, 50]} content='Inbox' placement='bottom'>
                 <button className={cx('action-btn')}>
                   <InboxIcon />
+                  <span className={cx('badge')}>12</span>
                 </button>
               </Tippy>
             </>
